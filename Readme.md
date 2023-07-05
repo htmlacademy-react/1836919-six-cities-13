@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Robert Khabibullin](https://up.htmlacademy.ru/react/13/user/1836919).
-* Наставник: `Неизвестно`.
+* Наставник: [Денис Уткин](https://htmlacademy.ru/profile/id2254997).
 
 ---
 
