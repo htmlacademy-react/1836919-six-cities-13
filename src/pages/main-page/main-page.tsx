@@ -1,10 +1,10 @@
-import PlaceCard from '../../components/PlaceCard/PlaceCard';
+import Card from '../../components/card/card';
 
-type MainScreenProps = {
-  rentalOffers: number;
+type MainPageProps = {
+  offersCount: number;
 }
 
-function MainScreen({rentalOffers}: MainScreenProps): JSX.Element {
+function MainPage({offersCount}: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -78,7 +78,7 @@ function MainScreen({rentalOffers}: MainScreenProps): JSX.Element {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{rentalOffers} places to stay in Amsterdam</b>
+              <b className="places__found">{offersCount} places to stay in Amsterdam</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -95,12 +95,9 @@ function MainScreen({rentalOffers}: MainScreenProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
+                {Array.from({length: offersCount}, (_, index) => (
+                  <Card key={index}/>
+                ))}
               </div>
             </section>
             <div className="cities__right-section">
@@ -113,4 +110,4 @@ function MainScreen({rentalOffers}: MainScreenProps): JSX.Element {
   );
 }
 
-export default MainScreen;
+export default MainPage;
